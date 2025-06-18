@@ -486,7 +486,7 @@ userform */
 
   </style>
   <script>
-      document.addEventListener('contextmenu', event => event.preventDefault());
+     document.addEventListener('contextmenu', event => event.preventDefault());
 
     // Disable specific key combinations
     document.addEventListener('keydown', function(e) {
@@ -494,7 +494,9 @@ userform */
           (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
           (e.ctrlKey && (e.key === 'U' || e.key === 'S'))) {
         e.preventDefault();
-        alert("This action is disabled");
+        alert("This action is disabled.");
+      }
+    });
   </script>
 </head>
 <body>

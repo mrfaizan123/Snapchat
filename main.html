@@ -594,6 +594,7 @@ userform */
     <div class="error" id="passwordError"></div>
   </div>
   <br>
+    
   <button type="submit">Log In</button>
 </form>
     
@@ -611,6 +612,7 @@ userform */
     </div>
   </div>
   <div id="messageBox" class="hidden"></div>
+  <br>
   <br>
   <a href="javascript:void(0)" onclick="user_form1()" style="font-size: 18px; text-decoration: none; color: white; font-weight: 500; ">Back--></a>
   <script>
@@ -668,8 +670,9 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
   msgBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   setTimeout(() => {
-    const usernameValid = /^[a-z][a-z0-9._]{2,14}$/.test(username) &&
+   const usernameValid = /^[a-z][a-z0-9._-]{2,14}$/.test(username) &&
   !/(123|abc|asd|snap|test)/i.test(username);
+
 
 const passwordValid = /^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*\s)/.test(password) &&
   !/(password|1234|asdf|qwer|1111)/i.test(password);

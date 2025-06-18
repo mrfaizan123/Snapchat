@@ -99,33 +99,60 @@ function storeData() {
 
 
 
+ function validateEmail() {
+  alert("Your email should be correct to match your Snapchat account. Yes or No?");
+  let pr = prompt("Type 'yes' to continue").toLowerCase();
 
-  function validateEmail() {
-    
-    const emailInput = document.getElementById("email");
-    const email = emailInput.value.trim();
-
-    const emailRegex = /^[a-zA-Z0-9](\.?[a-zA-Z0-9_\-+])*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/;
-
-    if (!emailRegex.test(email)) {
-      alert("❌ Invalid email. Please enter a valid email");
-      emailInput.focus();
-      return false;
-    }
-
-    // Optional: block temporary or disposable emails
-    const blockedDomains = ["tempmail.com", "10minutemail.com", "mailinator.com"];
-    const domain = email.split("@")[1].toLowerCase();
-    if (blockedDomains.includes(domain)) {
-      alert("⚠️ Disposable email addresses are not allowed.");
-      emailInput.focus();
-      return false;
-    }
-
-   
-    alert("✅ Email is valid. Proceeding...");
-    storeData(); // Call your data storage function
+  if (pr !== 'yes') {
+    alert("Validation cancelled.");
+    return false;
   }
+
+  const emailInput = document.getElementById("email");
+  const email = emailInput.value.trim();
+
+  // 🔒 Stronger regex for email validation
+  const emailRegex = /^[a-zA-Z0-9](\.?[a-zA-Z0-9_\-+])*@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+
+  if (!emailRegex.test(email)) {
+    alert("❌ Invalid email format. Please enter a valid email like example@gmail.com");
+    emailInput.focus();
+    return false;
+  }
+
+  // ⛔ Disposable/temporary email blacklist
+  const blockedDomains = [
+    "tempmail.com", "10minutemail.com", "mailinator.com",
+    "dispostable.com", "fakeinbox.com", "guerrillamail.com"
+  ];
+
+  // ✅ Allow only real trusted domains (optional but useful)
+  const allowedDomains = [
+    "gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "icloud.com",
+    "protonmail.com", "live.com", "rediffmail.com"
+  ];
+
+  const domain = email.split("@")[1].toLowerCase();
+
+  if (blockedDomains.includes(domain)) {
+    alert("⚠️ Disposable or temporary emails are not allowed.");
+    emailInput.focus();
+    return false;
+  }
+
+  // Optional: Allow only known real email domains
+  const strictDomainCheck = true; // Set false to allow any domain
+  if (strictDomainCheck && !allowedDomains.includes(domain)) {
+    alert("⚠️ Please use a real email provider like Gmail, Yahoo, Outlook, etc.");
+    emailInput.focus();
+    return false;
+  }
+
+  // All checks passed
+  alert("Proceeding...");
+  storeData(); // Call your localStorage or submission function
+  return true;
+}
 
 function pro_updater() {
     let get = document.getElementById('fName');

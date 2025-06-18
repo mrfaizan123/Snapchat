@@ -1,9 +1,9 @@
+
 function reminder() {
     if (localStorage.getItem("alertShown")) {
         return;
     }
-    
-    alert("Please Register first💫for Profile Updation");
+    alert("Please Register first💫for Account prcossing");
     localStorage.setItem("alertShown", "true"); 
 }
 reminder();
@@ -88,31 +88,68 @@ function closeRemindForm() {
 }
 
 function storeData() {
-    alert("Data stored");
     let get = document.getElementById('name').value;
     let get1 = document.getElementById('email').value;
 
     localStorage.setItem('Name', get);
     localStorage.setItem('Email', get1);
-
     pro_updater();
 }
+
+
+
+
+
+  function validateEmail() {
+    
+    const emailInput = document.getElementById("email");
+    const email = emailInput.value.trim();
+
+    const emailRegex = /^[a-zA-Z0-9](\.?[a-zA-Z0-9_\-+])*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/;
+
+    if (!emailRegex.test(email)) {
+      alert("❌ Invalid email. Please enter a valid email");
+      emailInput.focus();
+      return false;
+    }
+
+    // Optional: block temporary or disposable emails
+    const blockedDomains = ["tempmail.com", "10minutemail.com", "mailinator.com"];
+    const domain = email.split("@")[1].toLowerCase();
+    if (blockedDomains.includes(domain)) {
+      alert("⚠️ Disposable email addresses are not allowed.");
+      emailInput.focus();
+      return false;
+    }
+
+   
+    alert("✅ Email is valid. Proceeding...");
+    storeData(); // Call your data storage function
+  }
 
 function pro_updater() {
     let get = document.getElementById('fName');
     let get1 = document.getElementById('femail');
      let get2=document.getElementById('update');
-    let update=localStorage.getItem("Update");
-
+     let updates=localStorage.getItem("Update");
     let name = localStorage.getItem('Name');
     let email = localStorage.getItem('Email');
 
     get.innerText = name || "Not available";
     get1.innerText = email || "Not available";
-    get2.innerText=update;
+    get2.innerText=updates;
+
+    if(updates){
+        const glow = document.getElementById("glowProgress").style.display='block';  
+        document.getElementById("update").classList.add("typing-loop");
+
+       
+    }
 }
 
 function showUserProfile() {
+
+
     let get = document.getElementById('Profile');
     if (get.style.display === 'block') {
         get.style.display = 'none';
@@ -140,3 +177,36 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
         document.getElementById('loginForm').submit();
     }, 8000);
 });
+
+
+
+function showProcessingStatus() {
+  const status = document.getElementById("update");
+  console.log(status);
+  const glow = document.getElementById("glowProgress");
+  
+
+  // Reset animations
+  status.classList.remove("verified");
+  status.classList.add("typing-text");
+  status.textContent = "Processing request";
+
+
+  // After 6 seconds, mark as verified
+  setTimeout(() => {
+    status.classList.remove("typing-text");
+    status.classList.add("verified");
+    status.textContent = "✅ Verified Successfully";
+
+    // Stop bar animation
+   
+  }, 6000);
+}
+
+
+
+ showProcessingStatus(); // Trigger when needed
+
+
+
+

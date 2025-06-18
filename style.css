@@ -147,15 +147,15 @@
 }
      */
 
-     .banner {
-  background-image: url("image.png");
-  height: calc(100vh - 80px);
-  width: 100%;
-  height: 600px;
-  margin-top: 80px;
+    .banner {
+  background-image: url("img3.png");
+  /* height: calc(100vh - 80px); */
+  width: auto;
+  /* height: 600px; */
+  margin-top: 50px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  /* background-size: cover; */
   background-attachment: fixed;
   transition: background-image 1s ease-in-out;
 }
@@ -208,44 +208,80 @@
 .profile-update span {
   font-weight: 500;
   color: #007BFF;
+  
 }
 
-/* #Update {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 10px 18px;
-  background-color: #007BFF;
-  color: white;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
+#update {
+  width: 100%;
   text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(90deg, #e72787, #020de2, #eaff00);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowText 6s ease-in-out infinite;
 }
 
-#Update:hover {
-  background-color: #0056b3;
-} */
+/* Keyframes for smooth color movement */
+@keyframes rainbowText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 /* Responsive Design */
+
+
+
+/* Tablet and above */
 @media screen and (max-width: 1024px) {
   .profile-update {
     right: 20px;
     width: 70%;
-    max-width: 40%;
+    max-width: 80%;
   }
 }
 
+/* Medium screens */
 @media screen and (max-width: 768px) {
   .profile-update {
-    right: 10px;
+    width: 60%;
+    margin: 10px auto;
     left: 10px;
-    margin: 20px auto;
-    width: calc(50% - 20px);
+    right: 10px;
+    top:250px;
   }
 
   .profile-update p {
     font-size: 16px;
+  }
+
+  #Update {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Small screens like mobiles */
+@media screen and (max-width: 500px) {
+  .profile-update {
+    width: 80%;
+    margin: 10px auto;
+    left: 2.5%;
+    right: 2.5%;
+    padding: 15px;
+  }
+
+  .profile-update p {
+    font-size: 14px;
+    word-wrap: break-word;
   }
 
   #Update {
@@ -330,19 +366,7 @@
     
 }
 
- /* #but1 {
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    color: #fff;
-    background: linear-gradient(50deg,#ff0000,#e302b6, #0023b1);
-    background-size: 300%; 
-    animation: gradientShift 4s infinite; 
-    
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-} */
+ 
 
 
 /* Responsive Footer Styles */
@@ -529,16 +553,6 @@
     }
 
 
-
-
-
-
-
-
-
-
-
-
   .form-container {
   background-color: white;
   padding: 30px 40px;
@@ -559,7 +573,7 @@
 
 .form-container h2 {
   margin-bottom: 25px;
-  color: #fffc00;
+  color: #b9ff07;
   text-shadow: 1px 1px #000;
   font-weight: 600;
 }
@@ -623,19 +637,46 @@ button:hover {
 
 
     #close3-btn {
-      /* display: none; */
+     
         position: fixed;
         top: 85px;
-        /* left: 750px; */
          right:200px;
         background-color: red;
         color: white;
         border: none;
         cursor: pointer;
-        /* padding: 10px; */
         border-radius: 5px;
         font-size: 18px;
         z-index: 1000; 
         width: 50px;
     }
+
+.glow-bar {
+  margin-top: 10px;
+  width: 50%;
+  height: 6px;
+  background: linear-gradient(90deg, #ff0080, #7928ca, #00ffe7);
+  background-size: 300% 300%;
+  animation: glowMove 5s ease-in-out infinite, pulseFill 5s ease-in-out infinite;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+  transform-origin: left;
+}
+#glowProgress{
+  display: none;
+}
+@keyframes glowMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseFill {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+
+
+
   

